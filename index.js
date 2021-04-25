@@ -12,26 +12,20 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
+    
 });
 
-app.use(router);
-
-
-
-
-
-
-
+app.use('/v1', router);
 
 
 mongoose
   .connect(
-    "mongodb+srv://pankaj:qwerty1234@blog.7o79k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongodb+srv://pankaj:qwerty1234@blog.7o79k.mongodb.net/blog?retryWrites=true&w=majority",
     { useNewUrlParser: true }
   )
   .then(() => {
-    app.listen(8080, () => {
-      console.log("Runnig at http://localhost:8080");
+    app.listen(8001, () => {
+      console.log("Runnig at http://localhost:8001");
     });
   })
   .catch((err) => console.log(err));
