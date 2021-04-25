@@ -7,4 +7,5 @@ router.get('/blog', getBlogs);
 router.get('/blog/:blogid', getBlogById);
 router.put('/blog', updateBlogById);
 
+
 module.exports = router;
