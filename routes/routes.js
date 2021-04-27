@@ -1,6 +1,6 @@
 const express = require('express');
 const { insertBlog, getBlogs, getBlogById, updateBlogById } = require('../controller/blog');
-const {mailer }= require('../controller/mailer');
+const {mailer,subscribe }= require('../controller/mailer');
 const router = express.Router();
 
 router.post('/blog', insertBlog);
@@ -11,6 +11,6 @@ router.put('/blog', updateBlogById);
 // Mailer
 
 router.post('/send', mailer);
-
+router.post('/send', subscribe);
 
 module.exports = router;

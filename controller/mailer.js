@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-
+const subscriber = require('../model/blog')
 let mailTransporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -123,5 +123,26 @@ module.exports = {
         });
       }
     });
+  },
+
+  subscribe: (req,res)=>{
+      const subs = req.body.subs;
+
+      const list = new subscriber({
+          subs = subs,
+      });
+      list.save()
+      .then((result)=>{
+         res.status(200).json({
+          data: result,
+          message: "Inserted Successfully",
+        });
+      })
+      .catch((err) => {
+        res.status(404).json({
+          error: err,
+          message: "Failed",
+        });
+      });
   },
 };
