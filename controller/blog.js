@@ -1,5 +1,6 @@
 const Blog = require("../model/blog");
 
+
 module.exports = {
   /**
    *
@@ -8,14 +9,14 @@ module.exports = {
    */
 
   insertBlog: (req, res) => {
-    const userid = req.body.userid;
+    
     const title = req.body.title;
     const thumbnail = req.body.thumbnail;
     const content = req.body.content;
     const keywords = req.body.keywords;
 
     const list = new Blog({
-      userid: userid,
+      
       title: title,
       thumbnail: thumbnail,
       content: content,
