@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const { subscribe } = require("../controller/mailer");
-
 
 const Schema = mongoose.Schema;
 
@@ -29,15 +27,4 @@ const blogSchema = new Schema(
     }
 );
 
-
-const blogSubscriber = new Schema(
-    {
-        subs:{
-            type:String,
-            require:true
-        }
-    }
-)
-
 module.exports = mongoose.model('User', blogSchema)
-module.exports = mongoose.model('subscriber',blogSubscriber)

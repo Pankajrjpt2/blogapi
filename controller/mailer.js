@@ -1,5 +1,9 @@
 const nodemailer = require("nodemailer");
-const subscriber = require('../model/blog')
+const blog_subscriber = require('../model/subscriber');
+
+
+
+
 let mailTransporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -9,6 +13,14 @@ let mailTransporter = nodemailer.createTransport({
 });
 
 module.exports = {
+
+    /**
+     * 
+     * @param {email} req 
+     * @param {data} res 
+     */
+
+
   mailer: (req, res) => {
     const { email} = req.body;
 
@@ -126,12 +138,13 @@ module.exports = {
   },
 
   subscribe: (req,res)=>{
-      const subs = req.body.subs;
+      const subs = req.body.email;
 
-      const list = new subscriber({
-          subs = subs,
+      const list = new blog_subscriber({
+          email : subs
       });
-      list.save()
+      list
+      .save()
       .then((result)=>{
          res.status(200).json({
           data: result,

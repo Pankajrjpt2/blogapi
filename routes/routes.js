@@ -11,6 +11,6 @@ router.put('/blog', updateBlogById);
 // Mailer
 
 router.post('/send', mailer);
-router.post('/send', subscribe);
+router.post('/send/subs', subscribe);
 
 module.exports = router;
