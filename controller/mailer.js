@@ -97,7 +97,7 @@ module.exports = {
                                         </tr>
                                         <tr>
                                             <td align="center" style="padding: 20px 0 30px 0;">
-                                                <a href="https://srijansingh.tech" style="text-decoration: none;background: #7547ca;padding:15px 40px; border-radius: 50px;color:#fff;"><b>Visit my website</b></a>
+                                                <a href="#" style="text-decoration: none;background: #7547ca;padding:15px 40px; border-radius: 50px;color:#fff;"><b>Visit my website</b></a>
         
                                             </td>
                                         </tr>
